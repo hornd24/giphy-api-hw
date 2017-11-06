@@ -19,7 +19,7 @@ $('#done').on('click',function(){
 $('button').on('click',function(){
     var cars = $(this).attr('carModels');
     
-    var search= 'http://api.giphy.com/v1/gifs/search?q='+ cars +
+    var search= 'https://api.giphy.com/v1/gifs/search?q='+ cars +
     '&api_key=ropdsAGp3DkXzD5Kb4qmGD3oRmUz716T&limit=10';
 
 $.ajax({
