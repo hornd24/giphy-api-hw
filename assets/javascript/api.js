@@ -18,7 +18,7 @@ $('#done').on('click',function(){
 })
 $('button').on('click',function(){
     var cars = $(this).attr('carModels');
-    console.log("The button is going into the funtion: " + cars);
+    
     var search= 'http://api.giphy.com/v1/gifs/search?q='+ cars +
     '&api_key=ropdsAGp3DkXzD5Kb4qmGD3oRmUz716T&limit=10';
 
@@ -30,14 +30,14 @@ $.ajax({
     var re = response.data;
     console.log(response.data);
     for(i=0;i < re.length; i++) {
-    var re = response.data[i].images.fixed_height.url;
+    var results = response.data[i].images.fixed_height.url;
    
 var img = $('<img>');
-img.attr('src',re)
+img.attr('src',results)
     $('#gif').prepend(img)
     
     }
 
-    console.log(re);
+    console.log(results);
 });
 });
