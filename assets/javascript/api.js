@@ -6,7 +6,7 @@ $('#done').on('click',function(){
     var input = document.getElementById('box').value;
 
     var buttons = $('<button>  </button>'); 
-    //buttons.attr('class','thisbutton')
+    // buttons.attr('id','thisbutton')
     buttons.attr('carModels',input);
 
    
