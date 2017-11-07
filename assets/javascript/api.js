@@ -1,13 +1,15 @@
 
-
+var carMakers = ['honda','toyota','subru','ford','volkswagen','suzuki','nissan','mitsubishi','mercedes','acura','ferrari','bentley','bugatti','chevrolet',
+'lexus','land rover','infiniti','aston martin'];
 
 //this function on click will get whatever the user typed into the input box and put it on the dom 
 //as a button with a attribute of carModels='whatever the input is' 
-
-$('#done').on('click',function(){
-    //gets the value the user wrote
-    var input = document.getElementById('box').value;
+function search(){
+//gets the value the user wrote
+var input = document.getElementById('box').value;
 //sets up creating a button
+
+
  
     var buttons = $('<button>  </button>'); 
     // buttons.attr('id','thisbutton')
@@ -19,8 +21,27 @@ $('#done').on('click',function(){
     buttons.html(input)
     console.log(buttons)
     console.log(input);
-    $('.buttons').append(buttons);
+    var modelFlag =false;
+    for(var i=0; i <carMakers.length;i++){
+        console.log(carMakers)
+        if(carMakers[i] === input){
+            modelFlag =true;
+            $('.buttons').append(buttons);
+            
+        }
+      
+
+    }
+   if(modelFlag == false){
+       alert('You can only use car Manufacturers');
+   }
     
+}
+$('#done').on( "enterkey", function(){
+    search();
+} ) 
+$('#done').on('click',function(){
+    search();
 })
 //the function uses the giphy api to search through its library of images
 $('body').on('click', 'button', function(){
